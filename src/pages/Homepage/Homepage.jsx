@@ -1,4 +1,6 @@
 import React from 'react';
+import NavBar from '../../components/NavBar/NavBar';
+
 
 
 class Homepage extends React.Component {
@@ -13,7 +15,11 @@ class Homepage extends React.Component {
 
     render() {
         return(
-            "this homepage loads"
+            <main className='Homepage'>
+                <nav>
+                    <NavBar />
+                </nav>
+            </main>
         );
     }
 }

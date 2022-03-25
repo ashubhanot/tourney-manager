@@ -1,21 +1,28 @@
-import React from 'react';
+import { render } from '@testing-library/react';
+import axios from 'axios';
+import { useEffect, useState } from 'react';
+import NavBar from '../../components/NavBar/NavBar';
 
 
-class ProfilePage extends React.Component {
+const ProfilePage = (props) => {
+    const [profile, setProfile] = useState()
 
-    // initial state of the app when it first loads
-    state = {
-    t_name: "",
-    organizer: "",
-    details: "",
+    useEffect(() => {
+        <NavBar/>
+        console.log('Here in useEffect')
+        axios.get('http://localhost:3001/profile')
+        .then(res => {
+            setProfile(res.data)
+            console.log('res', res)
+        });
+    }, []);
+
+
+    console.log(profile)
     
-    }
-
-    render() {
-        return(
-            "this profile page loads"
-        );
-    }
+    return "this profile page loads"
+        
+    
 }
 
 export default ProfilePage;

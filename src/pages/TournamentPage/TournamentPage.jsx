@@ -1,3 +1,4 @@
+import axios from 'axios';
 import React from 'react';
 
 
@@ -8,10 +9,20 @@ class TournamentPage extends React.Component {
     t_name: "",
     organizer: "",
     details: "",
+    tournaments: []
     
     }
+    
+      componentDidMount() {
+        axios.get('http://localhost:3001/tournaments')
+        .then((res) => {
+            this.setState({ tournaments : res.data })
+        })
+      }
+    
 
     render() {
+        console.log(this.state.tournaments)
         return(
             "this tournament page loads"
         );
