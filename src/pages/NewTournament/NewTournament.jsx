@@ -16,19 +16,10 @@ class NewTournament extends React.Component {
     render() {
         return(
             <main className='newTourney'>
-                <nav>
+                <div>
                     <h3>CREATE TOURNAMENT</h3>
-                </nav>
+                </div>
             </main>
-            // <>
-            //     <nav className="nav">
-            //         <Logo />
-            //         <CategoryList menuCategories={this.state.menuCategories} />
-            //         <UserLogOut name={this.state.name} email={this.state.email}/>
-            //     </nav>
-            //     <MenuList menuItems={this.state.menuItems} />
-            //     <OrderDetail currentOrderId={this.state.currentOrderId} />
-            // </>
         );
     }
 }

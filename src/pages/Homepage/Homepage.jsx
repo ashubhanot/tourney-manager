@@ -16,9 +16,9 @@ class Homepage extends React.Component {
     render() {
         return(
             <main className='Homepage'>
-                <nav>
+                <div>
                     <h3>HOMEPAGE</h3>
-                </nav>
+                </div>
             </main>
         );
     }
