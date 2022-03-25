@@ -10,19 +10,16 @@ class NewTournament extends React.Component {
     organizer: "",
     details: "",
     
-    // lineItems: [ // TEMPORARY: to test checkout. normally the initial cart is []
-    //     {qty:2, item: {id:"0",name:"Hamburger", price:5.95, emoji:"🍔", category: "Sandwiches"}},
-    //     {qty:2, item: {id:"1",name:"Ice Cream", price:1.95, emoji:"🍨",category: "Desserts"}},
-    // ],
-    // menuItems: [ // TEMPORARY: normally should be initialized to [] and populated from DB
-    //     {id:"0",name:"Hamburger", price:5.95, emoji:"🍔", category: "Sandwiches"},
-    //     {id:"1",name:"Ice Cream", price:1.95, emoji:"🍨",category: "Desserts"},
-    // ],
+    
     }
 
     render() {
         return(
-            "this new tournament page works"
+            <main className='newTourney'>
+                <nav>
+                    <h3>CREATE TOURNAMENT</h3>
+                </nav>
+            </main>
             // <>
             //     <nav className="nav">
             //         <Logo />

@@ -17,7 +17,7 @@ class Homepage extends React.Component {
         return(
             <main className='Homepage'>
                 <nav>
-                    <NavBar />
+                    <h3>HOMEPAGE</h3>
                 </nav>
             </main>
         );

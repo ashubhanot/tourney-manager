@@ -8,7 +8,6 @@ const ProfilePage = (props) => {
     const [profile, setProfile] = useState()
 
     useEffect(() => {
-        <NavBar/>
         console.log('Here in useEffect')
         axios.get('http://localhost:3001/profile')
         .then(res => {
@@ -20,7 +19,13 @@ const ProfilePage = (props) => {
 
     console.log(profile)
     
-    return "this profile page loads"
+    return(
+        <main className='ProfilePage'>
+            <nav>
+                <h3>PROFILE PAGE</h3>
+            </nav>
+        </main>
+    );
         
     
 }

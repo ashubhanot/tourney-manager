@@ -9,7 +9,7 @@ import Homepage from './pages/Homepage/Homepage'
 import NewTournament from './pages/NewTournament/NewTournament'
 import ProfilePage from './pages/ProfilePage/ProfilePage'
 import TournamentPage from './pages/TournamentPage/TournamentPage'
-// import NavBar from './components/NavBar/NavBar'
+import NavBar from './components/NavBar/NavBar'
 
 
 class App extends Component {
@@ -45,6 +45,9 @@ class App extends Component {
         {/* <Route path='/' render={(props) => (
             <Homepage {...props}/> */}
           {/* )}/> */}
+
+        <NavBar handleLogout={this.handleLogout} />
+        <br/>
 
         {this.state.user ?
           <Switch>

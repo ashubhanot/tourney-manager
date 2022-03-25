@@ -1,28 +1,30 @@
 import React from 'react'
 // import { Switch } from 'react-router-dom';
 import { Link } from 'react-router-dom';
+import './NavBar.css';
 
 
-export default class NavBar extends React.Component {
 
-  render(){
+const NavBar = (props) => {
     return(
-    <nav>
-        <Link to ='/'>Home </Link>
-        <Link to ='/profile'>Profile </Link>
-        <Link to ='/all'>All </Link>
-        <Link to ='/new'>Create </Link>
-        {/* <Link to ='/' onClick={props.handleLogout}>Logout</Link> */}
-        <Link to ='/' >Logout</Link>
+      <nav className='NavBarLinks'>
+          <Link to ='/'>Home </Link>
+          <Link to ='/profile'>Profile </Link>
+          <Link to ='/all'>All </Link>
+          <Link to ='/new'>Create </Link>
+          <Link to ='/' onClick={props.handleLogout}>Logout</Link>
+          {/* <Link to ='/' >Logout</Link> */}
 
-        {/* <Link to ='/'>Home</Link>
-        <Link to ='/login'>Profile</Link>
-        <Link to ='/all'>All</Link> */}
-    </nav>
+          {/* <Link to ='/'>Home</Link>
+          <Link to ='/login'>Profile</Link>
+          <Link to ='/all'>All</Link> */}
+      </nav>
     )
   
 };
-}
+
+export default NavBar
+
 
 
 

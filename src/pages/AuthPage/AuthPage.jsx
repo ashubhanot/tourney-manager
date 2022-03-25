@@ -11,7 +11,8 @@ export default class AuthPage extends React.Component {
 
   render() {
     return (
-      <main className="AuthPage">
+
+      <body className="AuthPage">
         <div>
           <h1>WELCOME TO TOURNEY MANAGER</h1>
           <h3>Easily organize tournamnents. Sign in/up to see all tournaments and teams!</h3>
@@ -23,7 +24,7 @@ export default class AuthPage extends React.Component {
         {this.state.showLogin ? 
         <LoginForm setUserInState={this.props.setUserInState}/> : 
         <SignUpForm setUserInState={this.props.setUserInState} />}
-      </main>
+      </body>
     );
   }
 }
