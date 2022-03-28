@@ -61,11 +61,20 @@ async function profile(req, res){
  };
 
 //render new tournament
-function newTourney(req, res, next){
-    User.find({}, function(err, user){
-        res.render('posts/all', {user})
-    })
- };
+async function newTourney(req, res){
+    try{
+        // use mongoose to create the tournament
+        const tname = req.body.tname;
+        const tdate = req.body.tdate;
+        const teams = req.body.teams;
+        const user = await User.create({name, password, email})
+        const token = jwt.sign({ user }, process.env.JWT_SECRET, jwtPolicy)
+
+        res.status(200).json(token)
+    }catch(err){
+        res.status(400).json(err)
+    }
+}
 
 //render new tournament
 function newTourney(req, res, next){

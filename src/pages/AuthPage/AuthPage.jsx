@@ -15,7 +15,7 @@ export default class AuthPage extends React.Component {
       <body className="AuthPage">
         <div>
           <h1>WELCOME TO TOURNEY MANAGER</h1>
-          <h3>Easily organize tournamnents. Sign in/up to see all tournaments and teams!</h3>
+          <h3>Setup tournamnents. Sign in/up to see all tournaments and teams!</h3>
           <br/>
           <h3 onClick={() => this.setState({ showLogin: !this.state.showLogin })}>
             {this.state.showLogin ? 'SIGN UP' : 'LOG IN'}

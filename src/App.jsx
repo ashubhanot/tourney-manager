@@ -25,13 +25,16 @@ class App extends Component {
   
   setUserInState = (incomingUserData) => {
     this.setState({ user: incomingUserData})
+    console.log(incomingUserData)
   }
 
   componentDidMount() {
     let token = localStorage.getItem('token')
+    console.log(token)
     if (token) {
       let userDoc = JSON.parse(window.atob(token.split('.')[1])).user
-      this.setState({user: userDoc})      
+      this.setState({user: userDoc}) 
+      console.log(userDoc);     
     }
   }
 
@@ -46,28 +49,31 @@ class App extends Component {
             <Homepage {...props}/> */}
           {/* )}/> */}
 
-        <NavBar handleLogout={this.handleLogout} />
-        <br/>
+        
 
         {this.state.user ?
-          <Switch>
-            <Route exact path='/' render={(props) => (
-              <Homepage {...props}/>
-            )}/>
-            <Route path='/tournament/:id' render={(props) => (
-              <TournamentPage {...props}/>
-            )}/>
-            <Route path='/profile' render={(props) => {
-              console.log('in profile route')
-              return <ProfilePage {...props}/>
-            }}/>
-            <Route path='/new' render={(props) => (
-              <NewTournament {...props}/>
-            )}/>
-            <Route path='/all' render={(props) => (
-              <AllTournaments {...props}/>
-            )}/>
-          </Switch>
+          <div>
+            <NavBar handleLogout={this.handleLogout} user={this.state.user}/>
+            <br/>
+            <Switch>
+              <Route exact path='/' render={(props) => (
+                <Homepage {...props}/>
+              )}/>
+              <Route path='/tournament/:id' render={(props) => (
+                <TournamentPage {...props} />
+              )}/>
+              <Route path='/profile' render={(props) => {
+                console.log('in profile route')
+                return <ProfilePage {...props}/>
+              }}/>
+              <Route path='/new' render={(props) => (
+                <NewTournament {...props} useridvalue={this.state.user}/>
+              )}/>
+              <Route path='/all' render={(props) => (
+                <AllTournaments {...props}/>
+              )}/>
+            </Switch>
+          </div>
           :
           <AuthPage setUserInState={this.setUserInState}/>
       }

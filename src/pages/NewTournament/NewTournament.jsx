@@ -1,23 +1,27 @@
 import React from 'react';
-import NavBar from '../../components/NavBar/NavBar';
+import AddTournamentForm from '../../components/AddTournamentForm/AddTournamentForm';
 
 
 class NewTournament extends React.Component {
 
     // initial state of the app when it first loads
     state = {
-    t_name: "",
-    organizer: "",
-    details: "",
-    
+    tname: "",
+    tdate: "",
+    teams: "",
     
     }
+
+    // componentDidMount() {
+    //     console.log(this.props);
+    //   }
 
     render() {
         return(
             <main className='newTourney'>
                 <div>
                     <h3>CREATE TOURNAMENT</h3>
+                    <AddTournamentForm userId={this.props.useridvalue._id}/>
                 </div>
             </main>
         );

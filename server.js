@@ -21,9 +21,10 @@ app.use(cors())
 app.use(express.static(path.join(__dirname, 'build')));
 
 // Put API routes here, before the "catch all" route
-// app.use('/api/orders', require('./routes/api/orders.js'));
+// app.use('/api/new', require('./routes/api/new.js'));
 // this one is going to do double duty, serving both items and categories-related routes:
 app.use('/api/users', require('./routes/api/users.js')); //maybe change /api/users?
+app.use('/api/tournaments', require('./routes/api/tournaments.js')); 
 // app.use('/api', require('./routes/api/items.js'));
 
 

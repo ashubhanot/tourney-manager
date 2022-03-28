@@ -9,15 +9,11 @@ const NavBar = (props) => {
     return(
       <nav className='NavBarLinks'>
           <Link to ='/'>Home </Link>
-          <Link to ='/profile'>Profile </Link>
+          <Link to ='/profile'>{props.user.name}'s Profile </Link>
           <Link to ='/all'>All </Link>
           <Link to ='/new'>Create </Link>
           <Link to ='/' onClick={props.handleLogout}>Logout</Link>
-          {/* <Link to ='/' >Logout</Link> */}
 
-          {/* <Link to ='/'>Home</Link>
-          <Link to ='/login'>Profile</Link>
-          <Link to ='/all'>All</Link> */}
       </nav>
     )
   
