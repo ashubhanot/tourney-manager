@@ -1,0 +1,25 @@
+.AllPage {
+  height: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  border-radius: 2vmin;
+}
+
+.AllPage table {
+  border-color: black;
+  padding: 0%;
+  background-color: lightgray;
+  font-size: large;
+  /* color: var(--text-light); */
+}
+
+/* .AllPage th {
+  padding-left: 1%;
+  padding-right: 1%;
+} */
+
+.AllPage h3 {
+  margin-top: 4vmin;
+  text-align: center;
+}

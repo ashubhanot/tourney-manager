@@ -40,63 +40,63 @@ async function login(req, res){
 // WIP
 
 
-//render all tournaments by all users
-async function index(req, res) {
-    try {
-        let users = await User.find({});
-        res.status(200).json(users);
-    } catch (err) {
-        res.status(400).json(err);
-    }
-}
+// //render all tournaments by all users
+// async function index(req, res) {
+//     try {
+//         let users = await User.find({});
+//         res.status(200).json(users);
+//     } catch (err) {
+//         res.status(400).json(err);
+//     }
+// }
 
-//render user profile
-async function profile(req, res){
-    try {
-        let users = await User.find({});
-        res.status(200).json(users);
-    } catch (err) {
-        res.status(400).json(err);
-    }
- };
+// //render user profile
+// async function profile(req, res){
+//     try {
+//         let users = await User.find({});
+//         res.status(200).json(users);
+//     } catch (err) {
+//         res.status(400).json(err);
+//     }
+//  };
 
-//render new tournament
-async function newTourney(req, res){
-    try{
-        // use mongoose to create the tournament
-        const tname = req.body.tname;
-        const tdate = req.body.tdate;
-        const teams = req.body.teams;
-        const user = await User.create({name, password, email})
-        const token = jwt.sign({ user }, process.env.JWT_SECRET, jwtPolicy)
+// //render new tournament
+// async function newTourney(req, res){
+//     try{
+//         // use mongoose to create the tournament
+//         const tname = req.body.tname;
+//         const tdate = req.body.tdate;
+//         const teams = req.body.teams;
+//         const user = await User.create({name, password, email})
+//         const token = jwt.sign({ user }, process.env.JWT_SECRET, jwtPolicy)
 
-        res.status(200).json(token)
-    }catch(err){
-        res.status(400).json(err)
-    }
-}
+//         res.status(200).json(token)
+//     }catch(err){
+//         res.status(400).json(err)
+//     }
+// }
 
-//render new tournament
-function newTourney(req, res, next){
-    User.find({}, function(err, user){
-        res.render('posts/all', {user})
-    })
- };
+// //render new tournament
+// function newTourney(req, res, next){
+//     User.find({}, function(err, user){
+//         res.render('posts/all', {user})
+//     })
+//  };
 
 
-//show tournament
-function showTourney(req, res, next){
-    User.find({}, function(err, user){
-        res.render('posts/all', {user})
-    })
- };
+// //show tournament
+// function showTourney(req, res, next){
+//     User.find({}, function(err, user){
+//         res.render('posts/all', {user})
+//     })
+//  };
 
 
 module.exports = {
     create,
     login,
-    index,
-    profile,
-    newTourney,
-    showTourney,
+    // index,
+    // profile,
+    // newTourney,
+    // showTourney,
 };

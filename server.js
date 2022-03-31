@@ -9,6 +9,8 @@ const cors = require('cors');
 require('dotenv').config()
 require('./config/database.js')
 
+const tournamentsRouter = require('./routes/api/tournaments'); 
+
 // app.use('/api/users', require('./routes/api/users'));
 app.use(logger('dev'));
 app.use(express.json());
@@ -24,8 +26,7 @@ app.use(express.static(path.join(__dirname, 'build')));
 // app.use('/api/new', require('./routes/api/new.js'));
 // this one is going to do double duty, serving both items and categories-related routes:
 app.use('/api/users', require('./routes/api/users.js')); //maybe change /api/users?
-app.use('/api/tournaments', require('./routes/api/tournaments.js')); 
-// app.use('/api', require('./routes/api/items.js'));
+app.use('/api/tournaments', tournamentsRouter); 
 
 
 // The following "catch all" route (note the *)is necessary
