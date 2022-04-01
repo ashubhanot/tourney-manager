@@ -2,6 +2,7 @@ const express = require('express');
 const path = require('path');
 // const favicon = require('serve-favicon');
 const logger = require('morgan');
+const bodyParser = require('body-parser');
 const app = express();
 const cors = require('cors');
 
@@ -14,6 +15,7 @@ const tournamentsRouter = require('./routes/api/tournaments');
 // app.use('/api/users', require('./routes/api/users'));
 app.use(logger('dev'));
 app.use(express.json());
+// app.use(express.json());
 app.use(cors())
 
 

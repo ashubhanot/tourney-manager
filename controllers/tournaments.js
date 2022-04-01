@@ -5,10 +5,11 @@ const Tournament = require('../models/tournaments.js');
 async function create (req, res) {
     try{
         const tname = await req.body.tname;
+        const location = await req.body.location;
         const tdate = await req.body.tdate;
         const teams = await req.body.teams;
         const user_id = await req.body.user_id;
-        const tournament = await Tournament.create({tname, tdate, teams, user_id})
+        const tournament = await Tournament.create({tname, location, tdate, teams, user_id})
         res.status(200).json(tournament)
     } catch(err){
         console.log(err)
@@ -19,57 +20,49 @@ async function create (req, res) {
 async function showAll (req, res) { 
         try {
             const tournaments = await Tournament.find({}).sort({createdAt:'desc'}).exec();
+           // console.log({all: tournaments});
             res.status(200).json(tournaments)
         } catch(err){
             res.status(400).json(err);
         }
 }
 
+async function deleteOne (req, res) {
+    try{
+        console.log('id', req.params.id);
+        //const tournament = await Tournament.findOne({'tournament._id':req.params.id}).remove();
+        const tournament = await Tournament.findOneAndDelete({_id: req.params.id});
+        console.log({tournament})
+        res.status(200).json(tournament)
+    } catch(err){
+        console.log(err)
+        res.status(400).json("Tournament not deleted")
+    }
+}
 
-// const showAll = async (req,res) => {
-//     console.log('test')
-// }
+async function update (req, res) {
+    try{
+        console.log('id', req.params.id);
+        console.log('body', req.body);
+        const tname = req.body.tname;
+        const teams = req.body.teams;
+        const location = req.body.location;
+        const tdate = req.body.tdate;
+        //const tournament = await Tournament.findOne({'tournament._id':req.params.id}).remove();
+        const tournament = await Tournament.findOneAndUpdate({_id: req.params.id}, {tname, teams, location, tdate});
+        // console.log({tournament})
+        res.status(200).json(tournament);
+    } catch(err){
+        console.log(err)
+        res.status(400).json("Tournament not updated")
+    }
+}
 
 
-// const showAll = async (req, res) => {
-//     try {
-//         const tournaments = await Tournament.find({}).sort({createdAt:'desc'}).exec();
-//         res.status(200).json(tournaments)
-//     } catch(err){
-//         res.status(400).json(err);
-//     }
-// }
-
-
-
-// async function deleteOne (req,res) {
-//     console.log("this works!")
-// }
-
-// line 20:             const tournaments = await Tournament.find({user: req.user._id}).sort({createdAt:'desc'}).exec();
-
-
-    // try{
-        // const tname =
-    // let user = await User.findById(req.body.user_id);
-    // let tournament = await Tournament.create({tname, tdate, teams, user_id})
-    
-    // req.body
-    // console.log(user)
-    // console.log(req.body)
-    // tournament.entries.push(req.body)  
-    // tournament.save(function(err){
-    //     if(err) {
-    //     console.log(err);
-    //     return res.json({err});
-    //     };
-    //     return res.json(tournament);
-    // })  
-// }
 
 
 
 module.exports = {
     create, showAll,
-    // deleteOne
+    deleteOne, update
 }

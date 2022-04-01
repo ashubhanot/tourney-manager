@@ -1,6 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
-// import tournaments from '../../../models/tournaments';
 import "./AllTournaments.css";
 
 export default class AllTournaments extends React.Component {
@@ -34,56 +32,28 @@ export default class AllTournaments extends React.Component {
           <table border="1">
             <thead>
               <th>Tournament name</th>
+              <th>Location</th>
               <th>Tournament dates</th>
               <th>Teams</th>
             </thead>
             <tbody>
               {tournaments &&
-                tournaments.map(({ tname, tdate, teams, _id }) => {
+                tournaments.map(({ tname, location, tdate, teams, _id }) => {
                   return (
                     <tr key={_id}>
                       <td>
                         <a href="/tournament/{_id}">{tname}</a>
                       </td>
+                      <td>{location}</td>
                       <td>{tdate}</td>
-                      {/* <td>{_id}</td> */}
                       <td>{teams}</td>
                     </tr>
                   );
                 })}
             </tbody>
           </table>
-          {/* {tournaments} */}
-          {/* {tournaments.length > 0 ?
-              tournaments
-              :
-              <span className="none">No Tournaments Added So Far!</span>
-              } */}
         </div>
       </main>
     );
   }
 }
-
-//WIP:
-
-// export default function AllTournaments(props) {
-
-//     let tournamentHistoryList = props.tournamentHistory.map( t =>
-//         <PrevOrderListItem order={t} />)
-
-//     return (
-//          <main className='all'>
-//             <nav>
-//                 <h3>ALL TOURNAMENTS</h3>
-//             </nav>
-//             {tournamentHistoryList.length > 0 ?
-//             tournamentHistoryList
-//             :
-//             <span className="none">No Tournaments Added So Far!</span>
-//             }
-//         </main>
-//     )
-// }
-
-// {/* <Link to='/all'>All</Link> */}

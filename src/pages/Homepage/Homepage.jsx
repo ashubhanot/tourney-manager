@@ -18,7 +18,7 @@ class Homepage extends React.Component {
           <h4>
             Quick links: <br />
             <br />
-            <a href="/create">Create Tournament</a>
+            <a href="/new">Create Tournament</a>
             <br />
             <br />
             <a href="/all">All Tournaments</a>

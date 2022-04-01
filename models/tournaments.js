@@ -6,6 +6,7 @@ const tournamentSchema = new Schema({
     tname: String,
     tdate: String,
     teams: String,
+    location: String,
     created: { type: Date, default: Date.now }
   }, {
     timestamps: true

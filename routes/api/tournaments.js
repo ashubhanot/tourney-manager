@@ -8,8 +8,8 @@ const tournamentsCtrl = require("../../controllers/tournaments");
 
 router.get('/', tournamentsCtrl.showAll)
 // router.get('/:id', tournamentsCtrl.showOne)
-// router.delete('/:id', tournamentsCtrl.deleteOne)
-// router.put('/:id', tournamentsCtrl.update)
+router.delete('/:id', tournamentsCtrl.deleteOne)
+router.put('/:id', tournamentsCtrl.update)
 
 router.post('/', tournamentsCtrl.create)
 

@@ -11,13 +11,10 @@
   padding: 0%;
   background-color: lightgray;
   font-size: large;
-  /* color: var(--text-light); */
+  align-items: center;
 }
 
-/* .AllPage th {
-  padding-left: 1%;
-  padding-right: 1%;
-} */
+
 
 .AllPage h3 {
   margin-top: 4vmin;

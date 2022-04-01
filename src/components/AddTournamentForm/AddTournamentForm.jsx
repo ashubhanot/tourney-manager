@@ -5,6 +5,7 @@ export default class AddTournamentForm extends Component {
     tname: "",
     tdate: "",
     teams: "",
+    location: "",
   };
 
   handleChange = (evt) => {
@@ -21,11 +22,11 @@ export default class AddTournamentForm extends Component {
   handleSubmit = async (evt) => {
     evt.preventDefault();
     try {
-      // 1 - grab the form info
       const reqBody = {
         tname: this.state.tname,
         tdate: this.state.tdate,
         teams: this.state.teams,
+        location: this.state.location,
         user_id: this.props.userId,
       };
 
@@ -36,27 +37,14 @@ export default class AddTournamentForm extends Component {
         body: JSON.stringify(reqBody),
       };
 
-      //2 - pass it to the backend & wait for the response check it
       const newTourneyRes = await fetch(url, options);
 
       console.log(newTourneyRes);
 
-      // A -- Error --> throw error --> enter the catch block
       if (!newTourneyRes.ok) throw new Error("Fetch Failed - Bad Request");
 
-      // B --> OK -> convert response (token)
       const tournament = await newTourneyRes.json();
       this.setState({ error: "Tournament added!" });
-
-      // console.log(token)
-      // 3 -> save the token in localStorage
-      // window.localStorage.setItem('token', token)
-
-      // 4 --> decode the token to get access to the USER RECORD!!!!!!
-      // const userDoc = await JSON.parse(window.atob(token.split('.')[1])).user
-
-      // 5 --> update the user state with the decoded user record
-      // this.props.setUserInState(userDoc)
     } catch (err) {
       console.log("New Tournament Form error", err);
       this.setState({ error: "Addition of Tournament Failed - Try Again" });
@@ -90,6 +78,14 @@ export default class AddTournamentForm extends Component {
               type="text"
               name="teams"
               value={this.state.teams}
+              onChange={this.handleChange}
+              required
+            />
+            <label>Location</label>
+            <input
+              type="text"
+              name="location"
+              value={this.state.location}
               onChange={this.handleChange}
               required
             />
