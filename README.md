@@ -2,7 +2,7 @@
 
 ## Intro
 
-Tourney Manager is a web app for tournament organizers to make and publish teams. Once logged in, you can see tournaments that have been created and also create your own.
+Tourney Manager is a very simple web app for tournament organizers to make and publish tournaments. Once logged in, you can see tournaments that have been created and also create your own.
 
 <br>
 
@@ -17,13 +17,13 @@ An account is required to create and see all the tournaments on the website. Acc
 ## Some screenshots of the app
 
 1. Initial landing page
-   ![]()
+   ![](https://i.imgur.com/O7tJTsf.png)
 
 2. All tournament listings
-   ![]()
+   ![](https://i.imgur.com/ZxvgbIu.png)
 
 3. All user's listings
-   ![]()
+   ![](https://i.imgur.com/l8v25BK.png)
 
 <br>
 
@@ -41,17 +41,17 @@ Implement the ability for users to create team pages with players.
 
 1. ### Wireframes
 
-   (a) unlogged in user landing page
-   ![](https://i.imgur.com/YmU0JER.png)
+   (a) logged in user viewing profile page
+   ![](https://i.imgur.com/xTFxjFV.png)
 
-   (b) logged in user viewing a business page
-   ![](https://i.imgur.com/WCUNFDN.png)
+   (b) logged in user create tournament page
+   ![](https://i.imgur.com/eV8QpTx.png)
 
 2. ### ERD
 
-   ![](https://i.imgur.com/CV2xZDv.png)
+   ![](https://i.imgur.com/Cntrtrk.png)
 
-3. ### [Project planning board - Trello](https://trello.com/b/zCL58Gnc/project-management)
+3. ### [Project planning board - Trello](https://trello.com/b/0QUfIdM9/project-management)
 
 <br>
 
