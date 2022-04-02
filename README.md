@@ -16,13 +16,13 @@ An account is required to create and see all the tournaments on the website. Acc
 
 ## Some screenshots of the app
 
-1. Initial landing page
+1. Initial landing page <br/>
    ![](https://i.imgur.com/O7tJTsf.png)
 
-2. All tournament listings
+2. All tournament listings <br/>
    ![](https://i.imgur.com/ZxvgbIu.png)
 
-3. All user's listings
+3. All user's listings <br/>
    ![](https://i.imgur.com/l8v25BK.png)
 
 <br>
